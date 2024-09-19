@@ -51,10 +51,11 @@ public class Program
     public bool Task_1_1(double x, double y)
     {
         bool answer = false;
-
-        // code here
-
-        // end
+        int r = 2;
+        if (x*x + y*y <= r*r)
+        {
+            answer = true;
+        }
 
         return answer;
     }
@@ -62,69 +63,71 @@ public class Program
     {
         bool answer = false;
 
-        // code here
-
-        // end
+        if (y >= 0 && y + Math.Abs(x) <= 1)
+        {
+            answer = true;
+        }
 
         return answer;
     }
     public double Task_1_3(double a, double b)
     {
         double answer = 0;
+        double mx = a, mn = b;
 
-        // code here
-
-        // end
+        if (a < b){
+            mx = b; mn = a;
+        }
+        double c = a > 0 ? mx : mn;
+        answer = c;
 
         return answer;
     }
     public double Task_1_4(double a, double b, double c)
     {
-        double answer = 0;
+        double answer = 0; 
 
-        // code here
-
-        // end
+        double mn = a < b ? a : b;
+        answer = mn > c ? mn : c;
 
         return answer;
     }
     public bool Task_1_5(double r, double s)
     {
         bool answer = false;
-
-        // code here
-
-        // end
+        double di, d;
+        di = 2 * Math.Sqrt(r/Math.PI);
+        d = Math.Sqrt(2 * s);
+        answer = di >= d ? true : false;
 
         return answer;
     }
     public bool Task_1_6(double r, double s)
     {
         bool answer = false;
+        double di, d;
 
-        // code here
-
-        // end
+        di = 2 * Math.Sqrt(r / Math.PI);
+        d = Math.Sqrt(s);
+        answer = di < d ? true : false;
 
         return answer;
     }
     public double Task_1_7(double x)
     {
         double answer = 0;
+        double mx = Math.Abs(x);
 
-        // code here
-
-        // end
+        answer = mx > 1 ? 1 : mx;
 
         return answer;
     }
     public double Task_1_8(double x)
     {
         double answer = 0;
+        double mx = Math.Abs(x);
 
-        // code here
-
-        // end
+        answer = mx >= 1 ? 0 : x*x - 1;
 
         return answer;
     }
@@ -132,9 +135,9 @@ public class Program
     {
         double answer = 0;
 
-        // code here
-
-        // end
+        if (x <= -1) answer = 0;
+        else if (x > 0) answer = 1;
+        else answer = x + 1;
 
         return answer;
     }
@@ -142,9 +145,9 @@ public class Program
     {
         double answer = 0;
 
-        // code here
-
-        // end
+        if (x <= -1) answer = 1;
+        else if (x > 1) answer = -1;
+        else answer = -x;
 
         return answer;
     }
@@ -163,7 +166,7 @@ public class Program
 
         return answer;
     }
-    public int Task_2_2(int n, double r)
+    public int Task_2_2(int n, double r, double a, double b)
     {
         int answer = 0;
 
@@ -175,9 +178,9 @@ public class Program
 
         return answer;
     }
-    public int Task_2_2(int n, double r, double a, double b)
+    public int Task_2_3(int n)
     {
-        double answer = 0;
+        int answer = 0;
 
         // code here
 

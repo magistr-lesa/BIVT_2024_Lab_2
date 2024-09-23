@@ -52,7 +52,7 @@ public class Program
     {
         bool answer = false;
         int r = 2;
-        if (x * x + y * y <= r * r)
+        if (Math.Abs(x * x + y * y - r * r) <= 0.001)
         {
             answer = true;
         }
@@ -407,7 +407,7 @@ public class Program
         if (type >= 0 && type < 3 && A > 0 && B > 0)
         {
             if (type == 0) answer = A * B;
-            else if (type == 1) answer = Math.Abs(Math.PI * (A * A  - B * B));
+            else if (type == 1) answer = B > A ? Math.PI * (B * B - A * A) : 0; 
             else
             {
                 double p = (A+B+B)/2;

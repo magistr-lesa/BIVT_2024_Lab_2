@@ -20,7 +20,7 @@ namespace Tests
             double[] x = new double[] { 0, 1.5, 1, 3 };
             double[] y = new double[] { 2, 0.7, 1, 0 };
             bool[] test = new bool[x.Length];
-            bool[] answer = new bool[] { true, true, true, false };
+            bool[] answer = new bool[] { true, false, false, false };
             // Act
             for (int i = 0; i < answer.Length; i++)
             {
@@ -451,22 +451,22 @@ namespace Tests
         [TestMethod()]
         public void Task_2_13Test()
         {
-            // arrange
+            // Arrange
             const int n = 3;
-            double[] a = new double[n] { 1.5, 0.2, 3 };
-            double[] b = new double[n] { 3, 2.8, 2.5 };
+            double[] A = new double[n] { 1.5, 0.2, 3 };
+            double[] B = new double[n] { 3, 2.8, 2.5 };
             int[] type = new int[n] { 0, 1, 2 };
             double[,] test = new double[n, n];
-            double[,] answer = new double[n, n] { { 4.5, 21.21, 3.27 }, { 0.56, 24.5, 0.06 }, { 7.5, 0, 9 } };
-            // act
+            double[,] answer = new double[n, n] { { 4.5, 21.21, 2.18 }, { 0.56, 24.5, 0.28 }, { 7.5, 0, 3 } };
+            // Act
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    test[i, j] = main.Task_2_13(a[i], b[i], type[j]);
+                    test[i, j] = main.Task_2_13(A[i], B[i], type[j]);
                 }
             }
-            // assert
+            // Assert
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
@@ -474,15 +474,15 @@ namespace Tests
                     Assert.AreEqual(answer[i, j], test[i, j]);
                 }
             }
-            double[] testfail = new double[4];
-            double[] answerfail = new double[] { 0, 0, 0, 0 };
-            testfail[0] = main.Task_2_13(-0.75, 1, 0);
-            testfail[1] = main.Task_2_13(0.01, 0, 2);
-            testfail[2] = main.Task_2_13(1.2, 2.1, 3);
-            testfail[3] = main.Task_2_13(1.2, 0.2, -4);
-            for (int i = 0; i < testfail.Length; i++)
+            double[] testFail = new double[4];
+            double[] answerFail = new double[] { 0, 0, 0, 0 };
+            testFail[0] = main.Task_2_13(-0.75, 1, 0);
+            testFail[1] = main.Task_2_13(0.01, 0, 2);
+            testFail[2] = main.Task_2_13(1.2, 2.1, 3);
+            testFail[3] = main.Task_2_13(1.2, 0.2, -4);
+            for (int i = 0; i < testFail.Length; i++)
             {
-                Assert.AreEqual(answerfail[i], testfail[i]);
+                Assert.AreEqual(answerFail[i], testFail[i]);
             }
         }
     }

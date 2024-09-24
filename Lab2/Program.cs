@@ -25,7 +25,7 @@ public class Program
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 3);
         //program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
+        program.Task_2_6(5);
         //program.Task_2_7(5);
         //program.Task_2_8(10);
         //program.Task_2_9(10);
@@ -268,7 +268,7 @@ public class Program
 
         Console.WriteLine(answer);
 
-        // for test input in console: -1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
+        // for test input in console: 1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
 
         return answer;
     }
@@ -517,7 +517,7 @@ public class Program
 
         // end
 
-        // for test input in console: -1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
+        // for test input in console: 1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
         // answer should be equal to the task_2_6 answer
 
         return answer;

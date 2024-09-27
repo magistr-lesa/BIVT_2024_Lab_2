@@ -389,12 +389,19 @@ public class Program
     {
         double answer = 0;
 
-        if ( type >= 0 && type < 3 && r > 0)
+        if (r > 0)
         {
-            if (type == 0) answer = r * r;
-            else if (type == 1) answer = r * r * Math.PI;
-            else answer = r * r * Math.Sqrt(3) / 4;
-
+            switch (type){
+                case 0:
+                answer = r*r;
+                break;
+                case 1:
+                answer = r * r * Math.PI;
+                break;
+                case 2:
+                answer = r * r * Math.Sqrt(3) / 4;
+                break;
+            }
         }
         answer = Math.Round(answer, 2);
 
@@ -404,14 +411,19 @@ public class Program
     {
         double answer = 0;
 
-        if (type >= 0 && type < 3 && A > 0 && B > 0)
+        if (A > 0 && B > 0)
         {
-            if (type == 0) answer = A * B;
-            else if (type == 1) answer = B > A ? Math.PI * (B * B - A * A) : 0; 
-            else
-            {
+            switch (type){
+                case 0:
+                answer = A * B;
+                break;
+                case 1:
+                answer = B > A ? Math.PI * (B * B - A * A) : 0;
+                break;
+                case 2:
                 double p = (A+B+B)/2;
                 answer = Math.Sqrt(p*(p-A)*(p-B)*(p-B));
+                break;
             }
 
         }

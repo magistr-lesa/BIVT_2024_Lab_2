@@ -36,25 +36,25 @@ public class Program
         //program.Task_2_5(10, 25.2);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
-        //program.Task_2_8(5);
+        Console.WriteLine(program.Task_2_8(5));
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1(10);
-        //program.Task_3_2(5, 2);
-        //program.Task_3_3(10);
-        //program.Task_3_4(5, 1, 3);
-        //program.Task_3_5(10, 30);
-        //program.Task_3_6(5);
-        //program.Task_3_7(5);
-        //program.Task_3_8(10);
-        //program.Task_3_9(10);
-        //program.Task_3_10(10);
-        //program.Task_3_11(10);
-        //program.Task_3_12(10, 0);
-        //program.Task_3_13(10, 5, 0);
+        // program.Task_3_2(3, 2, 1);
+        // program.Task_3_3(10);
+        // program.Task_3_4(1, 2);
+        // program.Task_3_5(10, 30);
+        // program.Task_3_6();
+        // program.Task_3_7(5);
+        // program.Task_3_8();
+        // program.Task_3_9(10);
+        // program.Task_3_10();
+        // program.Task_3_11(10);
+        // program.Task_3_12(1.5, 0);
+        // program.Task_3_13(10, 5, 0);
     }
     #region Level 1
     public bool Task_1_1(double x, double y)
@@ -64,7 +64,7 @@ public class Program
         // code here
         int R = 2;
 
-        answer = Math.Abs(x * x + y * y - R * R) <= Math.Pow(10, -3);
+        answer = Math.Abs(x * x + y * y - R * R) <= 0.001;
         // end
 
         return answer;
@@ -161,7 +161,6 @@ public class Program
         else if (x > -1 && x <= 0) answer = 1 + x;
         else answer = 1;
 
-        // answer = (x <= -1) ? 0 : ((x > -1 && x <= 0) ? (1 + x) : 1);
         // end
 
         return answer;
@@ -175,7 +174,6 @@ public class Program
         else if (x > -1 && x <= 1) answer = -x;
         else answer = -1;
 
-        //answer = (x <= -1) ? 1 : ((x > -1 && x <= 1) ? -x : -1);
         // end
 
         return answer;
@@ -348,9 +346,9 @@ public class Program
         }
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
 
-        return (answer, Math.Round(answerLength, 2)); // TODO
+        return (answer, Math.Round(answerLength, 2));
     }
     public double Task_2_9(int n)
     {
@@ -493,7 +491,7 @@ public class Program
 
         return answer;
     }
-    public int Task_3_2(int n, double r, double a, double b)
+    public int Task_3_2(double r, double a, double b)
     {
         int answer = 0;
 
@@ -647,7 +645,7 @@ public class Program
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
         // answer should be equal to the task_2_8 answer
 
-        return (answer, answerLength);
+        return (answer, Math.Round(answerLength, 2));
     }
     public double Task_3_9()
     {
@@ -710,10 +708,9 @@ public class Program
     }
     public double Task_3_12(double r, int type)
     {
-        double answer = 0;
-
-        // code here;
         if (r <= 0 || type < 0 || type > 2) return 0;
+
+        double answer = 0;
 
         // code here;
         switch (type)
@@ -730,9 +727,8 @@ public class Program
         }
 
         // end
-        // answer should be equal to the task_2_12 answer
 
-        return answer;
+        return Math.Round(answer, 2);
     }
     public double Task_3_13(double A, double B, int type)
     {

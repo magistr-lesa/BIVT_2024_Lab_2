@@ -36,7 +36,7 @@ public class Program
         //program.Task_2_5(10, 25.2);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
-        Console.WriteLine(program.Task_2_8(5));
+        //program.Task_2_8(5));
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);

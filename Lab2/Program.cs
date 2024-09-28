@@ -25,9 +25,9 @@ public class Program
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 3);
         //program.Task_2_5(10, 30);
-        program.Task_2_6(5);
+        //program.Task_2_6(5);
         //program.Task_2_7(5);
-        //program.Task_2_8(10);
+        //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
@@ -42,10 +42,10 @@ public class Program
         //program.Task_3_7();
         //program.Task_3_8();
         //program.Task_3_9();
-        program.Task_3_10();
+        //program.Task_3_10();
         //program.Task_3_11();
         //program.Task_3_12( 10, 0);
-        //program.Task_3_13( 10, 5, 0);
+        program.Task_3_13( 10, 5, 0);
     }
     #region Level 1
     public bool Task_1_1(double x, double y)
@@ -243,7 +243,7 @@ public class Program
         for (int i = 0; i < n; i++)
         {
             Double.TryParse(Console.ReadLine(), out res);
-            answer += res >= norm ? 1 : 0;
+            answer += res <= norm ? 1 : 0;
         }
         Console.WriteLine(answer);
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -268,7 +268,7 @@ public class Program
 
         Console.WriteLine(answer);
 
-        // for test input in console: 1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
+        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
 
         return answer;
     }
@@ -320,7 +320,7 @@ public class Program
         answer = n == 0 ? 0 : answer;
         Console.WriteLine($"{answer:d} {answerLength:f2}");
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
 
         return (answer, answerLength);
     }
@@ -439,18 +439,20 @@ public class Program
         double answer = 0, buf;
         int cnt = 0;
 
-        Double.TryParse(Console.ReadLine(), out buf);
-        while (buf != -50)
+        while (true)
         {
+            Double.TryParse(Console.ReadLine(), out buf);
+            if (buf == 0){
+                break;
+            }
             cnt++;
             answer += buf;
-            Double.TryParse(Console.ReadLine(), out buf);
         }
         answer = cnt != 0 ? answer/cnt : 0;
 
         Console.WriteLine(answer);
 
-        // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161,-50
+        // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161, -50
         // answer should be equal to the task_2_1 answer
 
         return answer;
@@ -529,7 +531,7 @@ public class Program
 
         // end
 
-        // for test input in console: 1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
+        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
         // answer should be equal to the task_2_6 answer
 
         return answer;
@@ -567,7 +569,7 @@ public class Program
 
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
         // answer should be equal to the task_2_8 answer
 
         return (answer, answerLength);
@@ -593,7 +595,7 @@ public class Program
         {
             {
                 Int32.TryParse(Console.ReadLine(), out p);
-                if (p <= 0 || p > 5) break;
+                if (p == 0) break;
                 cnt1++;
                 cnt += p > 3 ? 1 : 0;
                 if (cnt1 % 4 == 0)
@@ -637,12 +639,34 @@ public class Program
     public double Task_3_13(double A, double B, int type)
     {
         double answer = 0;
+        
+        string[] st;
 
-        // code here;
-
-        // end
-        // answer should be equal to the task_2_13 answer
-
+        while (true)
+        {
+            st = Console.ReadLine().Split(' ');
+            Double.TryParse(st[0], out A);
+            Double.TryParse(st[1], out B);
+            Int32.TryParse(st[2], out type);
+            if (type == -1) break;
+            if (A > 0 && B > 0)
+             {
+                switch (type){
+                case 0:
+                answer = A * B;
+                break;
+                case 1:
+                answer = B > A ? Math.PI * (B * B - A * A) : 0;
+                break;
+                case 2:
+                double p = (A+B+B)/2;
+                answer = Math.Sqrt(p*(p-A)*(p-B)*(p-B));
+                break;
+                }
+            }
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
+        }
         return answer;
     }
     #endregion

@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -224,7 +224,7 @@ public class Program
             if (0 <= x && x <= Math.PI && 0 <= y && y <= Math.Sin(x)) answer++;
         }
         Console.WriteLine(answer);
-        // for test input in console: -1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
+        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
 
         return answer;
     }
@@ -274,7 +274,7 @@ public class Program
         }
         Console.WriteLine(answer);
         Console.WriteLine(answerLength);
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
 
         return (answer, answerLength);
     }
@@ -471,7 +471,7 @@ public class Program
 
         // end
 
-        // for test input in console: -1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
+        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
         // answer should be equal to the task_2_6 answer
 
         return answer;
@@ -512,7 +512,7 @@ public class Program
         Console.WriteLine(answer);
         Console.WriteLine(answerLength);
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
         // answer should be equal to the task_2_8 answer
 
         return (answer, answerLength);

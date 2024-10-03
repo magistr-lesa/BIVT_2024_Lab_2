@@ -425,8 +425,6 @@ public class Program
 
         if (A <= 0 || B <= 0) answer = 0;
         
-        Console.WriteLine($"{A} {B} {type} {answer}");
-        
         return answer;
     }
     #endregion

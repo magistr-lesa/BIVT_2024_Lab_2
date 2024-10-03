@@ -21,18 +21,18 @@ Program program = new Program();
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
         //program.Task_2_1(10);
-        //program.Task_2_2(5, 3, 2, 1);
+       //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
-        //program.Task_2_7(5);
+        //program.Task_2_7(2);
         //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
-        //program.Task_2_11(10);
+        //program.Task_2_11(6);
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
@@ -237,7 +237,7 @@ Program program = new Program();
         for (int i = 0; i < n; i++)
         {
             Double.TryParse(Console.ReadLine(), out res);
-            answer += res <= norm ? 1 : 0;
+            answer += res < norm ? 1 : 0;
         }
         Console.WriteLine(answer);
 
@@ -360,9 +360,8 @@ Program program = new Program();
         }
         avg /= 4 * n;
         Console.WriteLine(answer);
-        Console.WriteLine(avg);
+        Console.WriteLine(Math.Round(avg,2));
 
-        // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
 
         return (answer, avg);
     }

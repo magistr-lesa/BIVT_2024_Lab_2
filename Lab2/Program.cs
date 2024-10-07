@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +21,7 @@ Program program = new Program();
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
         //program.Task_2_1(10);
-       //program.Task_2_2(5, 3, 2, 1);
+        //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
@@ -259,6 +259,7 @@ Program program = new Program();
 
         Console.WriteLine(answer);
 
+        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
 
         return answer;
     }
@@ -437,9 +438,10 @@ Program program = new Program();
 
         return answer;
     }
-    public int Task_3_2(double r)
+
+    public int Task_3_2(double r, double a, double b)
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here
 
@@ -453,6 +455,7 @@ Program program = new Program();
     public double Task_3_3()
     {
         double answer = 0;
+
         // code here
 
         // end
@@ -464,7 +467,7 @@ Program program = new Program();
     }
     public int Task_3_4(double r1, double r2)
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
 
         double x, y;
@@ -490,7 +493,7 @@ Program program = new Program();
     }
     public int Task_3_5(double norm)
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here
 
@@ -503,7 +506,7 @@ Program program = new Program();
     }
     public int Task_3_6()
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here
 
@@ -517,6 +520,7 @@ Program program = new Program();
     public (int, int) Task_3_7()
     {
         int answer1 = 0, answer3 = 0;
+
 
         double x, y;
 
@@ -537,7 +541,7 @@ Program program = new Program();
     }
     public (int, double) Task_3_8()
     {
-        int answer = 0;
+        int answer = 0, n = 0;
         double answerLength = double.MaxValue;
 
         // code here
@@ -552,6 +556,7 @@ Program program = new Program();
     public double Task_3_9()
     {
         double answer = double.MaxValue;
+        int n = 0;
 
         // code here
 
@@ -564,6 +569,7 @@ Program program = new Program();
     }
     public int Task_3_10()
     {
+
         int answer = 0, p, cnt = 0, cnt1 = 0;
 
         while (true)
@@ -584,11 +590,12 @@ Program program = new Program();
             // answer should be equal to the task_2_10 answer
         }
         Console.WriteLine(answer);
+
         return answer;
     }
     public (int, double) Task_3_11()
     {
-        int answer = 0;
+        int answer = 0, n = 0;
         double avg = 0.0;
 
         // code here;

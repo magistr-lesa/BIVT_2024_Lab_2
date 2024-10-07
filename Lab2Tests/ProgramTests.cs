@@ -203,6 +203,7 @@ namespace Tests
                 Assert.AreEqual(answer[i], test[i]);
             }
         }
+
         [TestMethod()]
         public void Task_2_12Test()
         {
@@ -250,6 +251,7 @@ namespace Tests
             int[] type = new int[n] { 0, 1, 2 };
             double[,] test = new double[n, n];
             double[,] answer = new double[n, n] { { 4.5, 21.21, 2.18 }, { 0.56, 24.5, 0.28 }, { 7.5, 8.64, 3 } };
+
             // Act
             for (int i = 0; i < n; i++)
             {

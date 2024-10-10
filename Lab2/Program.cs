@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -527,6 +527,7 @@ public class Program
         // code here
 
         // end
+
 
         return (answer, answerLength);
     }

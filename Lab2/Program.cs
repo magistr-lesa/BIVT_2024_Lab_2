@@ -27,25 +27,25 @@ public class Program
         //program.Task_2_4(5, 1, 3);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
-        //program.Task_2_7(5);
-        //program.Task_2_8(10);
+        program.Task_2_7(5);
+        //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
         //program.Task_2_12(10, 0);
-        //program.Task_2_13(10, 5, 0);
+        //program.Task_2_13(0.2, 2.8, 2);
         //program.Task_3_1();
         //program.Task_3_2(2);
         //program.Task_3_3();
         //program.Task_3_4(1, 3);
         //program.Task_3_5(30);
         //program.Task_3_6();
-        //program.Task_3_7();
+        program.Task_3_7();
         //program.Task_3_8();
         //program.Task_3_9();
-        program.Task_3_10();
+        //program.Task_3_10();
         //program.Task_3_11();
-        //program.Task_3_12(10, 0);
+        program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
     #region Level 1
@@ -55,7 +55,7 @@ public class Program
 
         // code here
         int r = 2;
-        if (x * x + y * y <= r * r + 1e-3)
+        if (Math.Abs(x * x + y * y - r * r) <= 1e-3)
         {
             answer = true;
         }
@@ -279,11 +279,17 @@ public class Program
         {
             double x, y;
             string s = Console.ReadLine();
-            string[] XY = s.Split(' ');
-            double.TryParse(XY[0], out x); double.TryParse(XY[1], out y);
-            if (x > Math.PI || x < 0) continue;
-            if (y <= Math.Sin(x)) answer++;
+            string s1 = Console.ReadLine();
+            //Console.Write(s); Console.WriteLine(s1);
+            double.TryParse(s, out x); double.TryParse(s1, out y);
+            //Console.WriteLine("{0:f2}, {1:f2}", x, y);
+            if (x > Math.PI || x < 0 || y < 0) continue;
+            if (y <= Math.Sin(x))
+            {
+                answer++;
+            }
         }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: -1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
@@ -300,18 +306,20 @@ public class Program
         {
             double x, y;
             string s = Console.ReadLine();
-            string[] XY = s.Split(' ');
-            double.TryParse(XY[0], out x); double.TryParse(XY[1], out y);
+            string s1 = Console.ReadLine();
+            //Console.Write(s); Console.WriteLine(s1);
+            double.TryParse(s, out x); double.TryParse(s1, out y);
+            //Console.WriteLine("{0:f2}, {1:f2}", x, y);
             if (x > 0)
             {
                 if (y < 0)
                 {
-                    answer1++;
-                    Console.WriteLine(1);
+                    Console.WriteLine(4);
                 }
                 else
                 {
-                    Console.WriteLine(4);
+                    answer1++;
+                    Console.WriteLine(1);
                 }
             }
             else
@@ -327,6 +335,7 @@ public class Program
                 }
             }
         }
+        Console.WriteLine("{0:d}, {1:d} ", answer1, answer3);
         // end
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
@@ -348,8 +357,10 @@ public class Program
         {
             double x, y;
             string s = Console.ReadLine();
-            string[] XY = s.Split(' ');
-            double.TryParse(XY[0], out x); double.TryParse(XY[1], out y);
+            string s1 = Console.ReadLine();
+            //Console.Write(s); Console.WriteLine(s1);
+            double.TryParse(s, out x); double.TryParse(s1, out y);
+            //Console.WriteLine("{0:f2}, {1:f2}", x, y);
             if (dist(x, y) < answerLength)
             {
                 answer = i; answerLength = dist(x, y);
@@ -357,9 +368,10 @@ public class Program
         }
         // end
 
+        Console.WriteLine("{0:d}, {1:f2} ", answer+1, answerLength);
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
 
-        return (answer, answerLength);
+        return (answer + 1, answerLength);
     }
     public double Task_2_9(int n)
     {
@@ -429,16 +441,18 @@ public class Program
         double answer = 0;
 
         // code here;
-        // Предположим что type = {1, 2, 3}, что соответственно значит
+        // Предположим что type = {0, 1, 2}, что соответственно значит
         // квадрат, круг и равносторонний треугольник соответственно
+        if (r <= 0) return 0;
         switch (type)
         {
-            case 1: answer = r * r; break;
-            case 2: answer = Math.PI * r * r; break;
-            case 3: answer = 0.5 * r * r * Math.Sin(Math.PI / 3); break;
+            case 0: answer = r * r; break;
+            case 1: answer = Math.PI * r * r; break;
+            case 2: answer = 0.5 * r * r * Math.Sin(Math.PI / 3); break;
+            default: answer = 0; break;
         }
         // end
-
+        answer = Math.Round(answer, 2);
         return answer;
     }
     public double Task_2_13(double A, double B, int type)
@@ -446,16 +460,21 @@ public class Program
         double answer = 0;
 
         // code here;
-        // Предположим что type = {1, 2, 3}, что соответственно значит
+        // Предположим что type = {0, 1, 2}, что соответственно значит
         // прямоугольник, кольцо и равнобедренный треугольник соответственно
+        if (A <= 0 || B <= 0) return 0;
+        if ((B + B < A) && type == 2) return 0;
+        Console.WriteLine("{0:f2}, {1:f2}, {2:d}", A,B, type);
         switch (type)
         {
-            case 1: answer = A*B; break;
-            case 2: answer = Math.Abs(Math.PI * A * A - Math.PI * B * B); break;
-            case 3: answer = (B*(Math.Sqrt(4*A*A - B*B)))/4; break;
+            case 0: answer = A*B; break;
+            case 1: answer = Math.Abs(Math.PI * A * A - Math.PI * B * B); break;
+            case 2: answer = (A * (Math.Sqrt(4 * B * B - A * A))) / 4; break;
+            default : answer = 0; break;
         }
         // end
-
+        answer = Math.Round((double)answer, 2);
+        Console.WriteLine(answer);
         return answer;
     }
     #endregion
@@ -584,18 +603,20 @@ public class Program
                 break;
             }
             double x, y;
-            string[] XY = s.Split(' ');
-            double.TryParse(XY[0], out x); double.TryParse(XY[1], out y);
+            string s1 = Console.ReadLine();
+            //Console.Write(s); Console.WriteLine(s1);
+            double.TryParse(s, out x); double.TryParse(s1, out y);
+            //Console.WriteLine("{0:f2}, {1:f2}", x, y);
             if (x > 0)
             {
                 if (y < 0)
                 {
-                    answer1++;
-                    Console.WriteLine(1);
+                    Console.WriteLine(4);
                 }
                 else
                 {
-                    Console.WriteLine(4);
+                    answer1++;
+                    Console.WriteLine(1);
                 }
             }
             else
@@ -612,6 +633,7 @@ public class Program
             }
         }
         // end
+        Console.WriteLine("{0:d}, {1:d} ", answer1, answer3);
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
         // answer should be equal to the task_2_7 answer
@@ -723,17 +745,21 @@ public class Program
         double answer = 0;
 
         // code here;
-        // Предположим что type = {1, 2, 3}, что соответственно значит
+        // Предположим что type = {0, 1, 2}, что соответственно значит
         // прямоугольник, кольцо и равнобедренный треугольник соответственно
+        if (A <= 0 || B <= 0) return 0;
+        if ((B + B < A) && type == 2) return 0;
+        Console.WriteLine("{0:f2}, {1:f2}, {2:d}", A, B, type);
         switch (type)
         {
-            case 1: answer = A * B; break;
-            case 2: answer = Math.Abs(Math.PI * A * A - Math.PI * B * B); break;
-            case 3: answer = (B * (Math.Sqrt(4 * A * A - B * B))) / 4; break;
+            case 0: answer = A * B; break;
+            case 1: answer = Math.Abs(Math.PI * A * A - Math.PI * B * B); break;
+            case 2: answer = (A * (Math.Sqrt(4 * B * B - A * A))) / 4; break;
+            default: answer = 0; break;
         }
         // end
-        // answer should be equal to the task_2_13 answer
-
+        answer = Math.Round((double)answer, 2);
+        Console.WriteLine(answer);
         return answer;
     }
     #endregion

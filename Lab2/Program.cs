@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
+using System.Globalization;
 using System.Runtime.InteropServices;
 
 public class Program
@@ -86,10 +87,10 @@ public class Program
         // code here
         if (a > 0)
         {
-            if (b >= a) answer = b; else answer = a;
+            answer = b >= a ? b : a;
         } else
         {
-            if (b >= a) answer = a; else answer = b;
+            answer = b >= a ? a : b;
         }
         // end
 
@@ -101,18 +102,8 @@ public class Program
 
         // code here
         double d = 0;
-        if (a >= b) { d = b; }
-        else
-        {
-            d = a;
-        }
-        if (d >= c)
-        {
-            answer = d;
-        }else
-        {
-            answer = c;
-        }
+        d = a >= b ? b : a;
+        answer = d >= c ? d : c;
         // end
 
         return answer;
@@ -221,7 +212,7 @@ public class Program
         double average_height;
         for (int i = 1; i <= n; i++)
         {
-            double.TryParse(Console.ReadLine(), out height);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out height);
             answer += height;
         }
         average_height = answer / n;
@@ -232,14 +223,14 @@ public class Program
     }
     public int Task_2_2(int n, double r, double a, double b)
     {
-        int answer = 0;//кол-во точек попавших внуть круга
+        int answer = 0;//кол-во точек попавших внутрь круга
 
         // code here
         double x, y;
         for(int i=1; i <= n; i++)
         {
-            double.TryParse(Console.ReadLine(), out x);
-            double.TryParse(Console.ReadLine(), out y);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out y);
             if ((x - a) * (x - a) + (y - b) * (y - b) <= r * r) answer++;  
         }
         Console.WriteLine($"В круг попало {answer} точек");
@@ -255,7 +246,7 @@ public class Program
         double weigh;
         for(int i = 1; i <= n; i++)
         {
-            double.TryParse(Console.ReadLine(), out weigh);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out weigh);
             if (weigh < 30) answer += 0.2;
         }
         Console.WriteLine($"{answer} литров молока потребуется на класс, состоящий из {n} учеников");
@@ -274,8 +265,8 @@ public class Program
         double x, y;
         for (int i = 1; i <= n; i++)
         {
-            double.TryParse(Console.ReadLine(), out x);
-            double.TryParse(Console.ReadLine(), out y);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out y);
             if ((x*x+y*y<=r2*r2)&&(x*x+y*y>=r1*r1)) answer++;
         }
         Console.WriteLine($"В кольцо попало {answer} точек");
@@ -292,8 +283,8 @@ public class Program
         double result;
         for (int i = 1; i <= n; i++)
         {
-            double.TryParse(Console.ReadLine(), out result);
-            if (result >= norm) answer++;
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out result);
+            if (result <= norm) answer++;//я считаю, что если спортсмен пробежал ровно за норму, то он справился с заданием
         }
         Console.WriteLine($"{answer} спортсменов выполнили норматив");
         // end
@@ -308,8 +299,8 @@ public class Program
         double x, y;
         for (int i = 1; i <= n; i++)
         {
-            double.TryParse(Console.ReadLine(), out x);
-            double.TryParse(Console.ReadLine(), out y);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out y);
             if ((y>=0)&&(y<=Math.Sin(x))&&(x>=0)&&(x<=Math.PI)) answer++;
         }
         Console.WriteLine($"В заданную область попало {answer} точек");
@@ -327,29 +318,29 @@ public class Program
         double x, y;
         for (int i = 1; i <= n; i++)
         {
-            double.TryParse(Console.ReadLine(), out x);
-            double.TryParse(Console.ReadLine(), out y);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out y);
             if (x >= 0)
             {
                 if (y >= 0) 
                 { 
                     answer1++; 
-                    Console.WriteLine($"({x},{y}) находится в 1 квадранте"); 
+                    Console.WriteLine($"({x};{y}) находится в 1 квадранте"); 
                 } else
                 {
-                    Console.WriteLine($"({x},{y}) находится в 4 квадранте");
+                    Console.WriteLine($"({x};{y}) находится в 4 квадранте");
                 }
             }
             else
             {
                 if(y >= 0)
                 {
-                    Console.WriteLine($"({x},{y}) находится во 2 квадранте");
+                    Console.WriteLine($"({x};{y}) находится во 2 квадранте");
                 }
                 else
                 {
                     answer3++;
-                    Console.WriteLine($"({x},{y}) находится в 3 квадранте");
+                    Console.WriteLine($"({x};{y}) находится в 3 квадранте");
                 }
             }
         }
@@ -368,15 +359,15 @@ public class Program
         double x, y;
         for (int i = 1; i <= n; i++)
         {
-            double.TryParse(Console.ReadLine(), out x);
-            double.TryParse(Console.ReadLine(), out y);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out y);
             if (Math.Sqrt(x * x + y * y) <= answerLength) 
             { 
                 answer = i; 
                 answerLength= Math.Sqrt(x * x + y *y);
             }
         }
-        Console.WriteLine($"Ближайшая точка к началу координат под номером {answer} на расстоянии {answerLength}");
+        Console.WriteLine($"Ближайшая точка к началу координат под номером {answer} на расстоянии {answerLength:f2}");
 
         // end
 
@@ -390,7 +381,7 @@ public class Program
         double x;
         for (int i = 1; i <= n; i++)
         {
-            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x);
             if (x <= answer)
             {
                 answer = x;
@@ -413,7 +404,7 @@ public class Program
             k = 0;
             for (int j = 1; j <= 4; j++)
             {
-                double.TryParse(Console.ReadLine(), out x);
+                double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x);
                 if ((x == 2) || (x == 3))
                 {
                     k++;
@@ -444,7 +435,7 @@ public class Program
             for (int j = 1; j <= 4; j++)
             {
                 double.TryParse(Console.ReadLine(), out x);
-                if ((x == 2) || (x == 3))
+                if ((x == 2))//неуспевающие - есть хотя бы одна двойка
                 {
                     k++;
                 }
@@ -545,7 +536,7 @@ public class Program
         do
         {
             Console.WriteLine("Введите вес ученика, для окончания введите 0");
-            double.TryParse(Console.ReadLine(), out weigh);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out weigh);
             if (weigh <= 0) break;
             n++;
             if (weigh < 30) answer += 0.2;
@@ -584,10 +575,10 @@ public class Program
         do
         {
             Console.WriteLine("Введите x, для окончания 100");
-            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x);
             if (x >= 100) break;
             Console.WriteLine("Введите y");
-            double.TryParse(Console.ReadLine(), out y);
+            double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out y);
             n++;
             if ((y >= 0) && (y <= Math.Sin(x)) && (x >= 0) && (x <= Math.PI)) answer++;
         } while (x < 100);

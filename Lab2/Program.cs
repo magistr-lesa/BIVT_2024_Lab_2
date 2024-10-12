@@ -103,7 +103,7 @@ public class Program
         // code here
         if (y >= 0 && y + Math.Abs(x) <= 1)
         {
-            return true;
+            answer = true;
         }
         // end
 

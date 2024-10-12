@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
+using System.Globalization;
 using System.Runtime.InteropServices;
 
 public class Program 
@@ -20,22 +21,94 @@ public class Program
         //program.Task_1_8(0.9);
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
-        //program.Task_2_1(10);
-        //program.Task_2_2(5, 3, 2, 1);
-        //program.Task_2_2(5, 1.5, 1.5, 1);
-        //program.Task_2_2(5, 1, 3, 1);
-        //program.Task_2_3(10);
-        //program.Task_2_4(5, 1, 2);
-        //program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
-        //program.Task_2_7(5);
-        //program.Task_2_8(5);
-        //program.Task_2_9(10);
-        //program.Task_2_10(10);
-        //program.Task_2_11(10);
+        program.Task_2_1(10);
+        Console.WriteLine("expected answer  163,4 \n");
+
+        program.Task_2_2(5, 3, 2, 1);
+        Console.WriteLine("expected answer  3 \n");
+        program.Task_2_2(5, 1.5, 1.5, 1);
+        Console.WriteLine("expected answer  2 \n");
+        program.Task_2_2(5, 1, 3, 1);
+        Console.WriteLine("expected answer  0 \n");
+
+        program.Task_2_3(10);
+        Console.WriteLine("expected answer  1,2 \n");
+        program.Task_2_3(8);
+        Console.WriteLine("expected answer  0,8 \n");
+        program.Task_2_3(6);
+        Console.WriteLine("expected answer  0,6 \n");
+
+        program.Task_2_4(5, 1, 2);
+        Console.WriteLine("expected answer  2 \n");
+        program.Task_2_4(5, 1, 3);
+        Console.WriteLine("expected answer  3 \n");
+        program.Task_2_4(4, 1, 2);
+        Console.WriteLine("expected answer  2 \n");
+        program.Task_2_4(4, 1, 3);
+        Console.WriteLine("expected answer  3 \n");
+        program.Task_2_4(3, 1, 2);
+        Console.WriteLine("expected answer  1 \n");
+        program.Task_2_4(3, 1, 3);
+        Console.WriteLine("expected answer  2 \n");
+
+        program.Task_2_5(10, 30);
+        Console.WriteLine("expected answer  8 \n");
+        program.Task_2_5(10, 25.5);
+        Console.WriteLine("expected answer  2 \n");
+        program.Task_2_5(8, 30);
+        Console.WriteLine("expected answer  6 \n");
+        program.Task_2_5(8, 25.5);
+        Console.WriteLine("expected answer  1 \n");
+        program.Task_2_5(6, 30);
+        Console.WriteLine("expected answer  4 \n");
+        program.Task_2_5(6, 25.5);
+        Console.WriteLine("expected answer  1 \n");
+
+        program.Task_2_6(5);
+        Console.WriteLine("expected answer  3 \n");
+        program.Task_2_6(4);
+        Console.WriteLine("expected answer  2 \n");
+        program.Task_2_6(3);
+        Console.WriteLine("expected answer  2 \n");
+
+        program.Task_2_7(5);
+        Console.WriteLine("expected answer  2 ; 1 \n");
+        program.Task_2_7(4);
+        Console.WriteLine("expected answer  2 ; 0 \n");
+        program.Task_2_7(3);
+        Console.WriteLine("expected answer  1 ; 0 \n");
+
+        program.Task_2_8(5);
+        Console.WriteLine("expected answer  5 ; 0,71 \n");
+        program.Task_2_8(4);
+        Console.WriteLine("expected answer  3 ; 1,03 \n");
+        program.Task_2_8(3);
+        Console.WriteLine("expected answer  3 ; 1,03 \n");
+
+        program.Task_2_9(10);
+        Console.WriteLine("expected answer  20,1 \n");
+        program.Task_2_9(8);
+        Console.WriteLine("expected answer  22,3 \n");
+        program.Task_2_9(6);
+        Console.WriteLine("expected answer  22,3 \n");
+
+        program.Task_2_10(10);
+        Console.WriteLine("expected answer  5 \n");
+        program.Task_2_10(8);
+        Console.WriteLine("expected answer  4 \n");
+        program.Task_2_10(6);
+        Console.WriteLine("expected answer  3 \n");
+
+        program.Task_2_11(10);
+        Console.WriteLine("expected answer  4 ; 4,05 \n");
+        program.Task_2_11(8);
+        Console.WriteLine("expected answer  3 ; 4,1875 \n");
+        program.Task_2_11(6);
+        Console.WriteLine("expected answer  2 ; 4,291666667 \n");
+
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
-        //program.Task_3_1();
+        program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
         //program.Task_3_2(1, 3, 1);
@@ -202,7 +275,7 @@ public class Program
         for(int k = 0; k < n; k++)
         {
             double height;
-            while(! double.TryParse(Console.ReadLine(), out height))
+            while(! double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out height))
             {
                 Console.WriteLine("invalid input    try again");
             }
@@ -225,13 +298,13 @@ public class Program
         {
             Console.WriteLine($"input abscissa of {k} point");
             double x;
-            while (!double.TryParse(Console.ReadLine(), out x))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x))
             {
                 Console.WriteLine("invalid input    try again");
             }
             Console.WriteLine($"input ordinate of {k} point");
             double y;
-            while (!double.TryParse(Console.ReadLine(), out y))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out y))
             {
                 Console.WriteLine("invalid input    try again");
             }
@@ -260,7 +333,7 @@ public class Program
         for(int k = 0; k < n; k++)
         {
             double weight;
-            while (!double.TryParse(Console.ReadLine(), out weight))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out weight))
             {
                 Console.WriteLine("invalid input    try again");
             }
@@ -283,13 +356,13 @@ public class Program
         {
             Console.WriteLine($"input abscissa of {k} point");
             double x;
-            while (!double.TryParse(Console.ReadLine(), out x))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x))
             {
                 Console.WriteLine("invalid input    try again");
             }
             Console.WriteLine($"input ordinate of {k} point");
             double y;
-            while (!double.TryParse(Console.ReadLine(), out y))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out y))
             {
                 Console.WriteLine("invalid input    try again");
             }
@@ -319,11 +392,11 @@ public class Program
         for (int k = 0; k < n; k++)
         {
             double result;
-            while (!double.TryParse(Console.ReadLine(), out result))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out result))
             {
                 Console.WriteLine("invalid input    try again");
             }
-            if (result < norm) //<=
+            if (result <= norm) 
                 answer++;
         }
         Console.WriteLine($"Task_2_5    answer = {answer}");
@@ -343,13 +416,13 @@ public class Program
         {
             Console.WriteLine($"input abscissa of {k} point");
             double x;
-            while (!double.TryParse(Console.ReadLine(), out x))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x))
             {
                 Console.WriteLine("invalid input    try again");
             }
             Console.WriteLine($"input ordinate of {k} point");
             double y;
-            while (!double.TryParse(Console.ReadLine(), out y))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out y))
             {
                 Console.WriteLine("invalid input    try again");
             }
@@ -381,13 +454,13 @@ public class Program
         {
             Console.WriteLine($"input abscissa of {k} point");
             double x;
-            while (!double.TryParse(Console.ReadLine(), out x))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x))
             {
                 Console.WriteLine("invalid input    try again");
             }
             Console.WriteLine($"input ordinate of {k} point");
             double y;
-            while (!double.TryParse(Console.ReadLine(), out y))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out y))
             {
                 Console.WriteLine("invalid input    try again");
             }
@@ -440,13 +513,13 @@ public class Program
         {
             Console.WriteLine($"input abscissa of {k} point");
             double x;
-            while (!double.TryParse(Console.ReadLine(), out x))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out x))
             {
                 Console.WriteLine("invalid input    try again");
             }
             Console.WriteLine($"input ordinate of {k} point");
             double y;
-            while (!double.TryParse(Console.ReadLine(), out y))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out y))
             {
                 Console.WriteLine("invalid input    try again");
             }
@@ -473,7 +546,7 @@ public class Program
         for (int k = 0; k < n; k++)
         {
             double time;
-            while (!double.TryParse(Console.ReadLine(), out time))
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out time))
             {
                 Console.WriteLine("invalid input    try again");
             }
@@ -487,7 +560,7 @@ public class Program
 
         return answer;
     }
-    public int Task_2_10(int n)
+    public int Task_2_10(int n) //!!!
     {
         int answer = 0;
 
@@ -497,19 +570,19 @@ public class Program
         {
             Console.WriteLine($"input 4 marks of {k} student");
             double mark1, mark2, mark3, mark4;
-            while (!double.TryParse(Console.ReadLine(), out mark1));
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out mark1))
             {
                 Console.WriteLine("invalid input    try again");
             }
-            while (!double.TryParse(Console.ReadLine(), out mark2));
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out mark2))
             {
                 Console.WriteLine("invalid input    try again");
             }
-            while (!double.TryParse(Console.ReadLine(), out mark3));
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out mark3))
             {
                 Console.WriteLine("invalid input    try again");
             }
-            while (!double.TryParse(Console.ReadLine(), out mark4));
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out mark4))
             {
                 Console.WriteLine("invalid input    try again");
             }
@@ -544,34 +617,36 @@ public class Program
         double avg = 0.0;
 
         // code here;
-        Console.WriteLine("Task_2_10");
-        for (int k = 1; k <= n; k++)
+        Console.WriteLine("Task_2_11");
+        for (int k = 1; k <= n; k++) //средний бал группы
         {
             Console.WriteLine($"input 4 marks of {k} student");
             double mark1, mark2, mark3, mark4;
-            while (!double.TryParse(Console.ReadLine(), out mark1)) ;
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out mark1)) 
             {
                 Console.WriteLine("invalid input    try again");
             }
-            while (!double.TryParse(Console.ReadLine(), out mark2)) ;
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out mark2)) 
             {
                 Console.WriteLine("invalid input    try again");
             }
-            while (!double.TryParse(Console.ReadLine(), out mark3)) ;
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out mark3)) 
             {
                 Console.WriteLine("invalid input    try again");
             }
-            while (!double.TryParse(Console.ReadLine(), out mark4)) ;
+            while (!double.TryParse(Console.ReadLine(), new CultureInfo("en-US"), out mark4)) 
             {
                 Console.WriteLine("invalid input    try again");
             }
+            avg += mark1 + mark2 + mark3 + mark4; 
             if (mark1 == 2 || mark2 == 2 || mark3 == 2 || mark4 == 2 )
             {
                 answer++;
             }
             Console.WriteLine();
         }
-        Console.WriteLine($"Task_2_10    answer = {answer}");
+        avg /= 4 * n;
+        Console.WriteLine($"Task_2_11    answer = {answer}, avg = {avg}");
         Console.WriteLine();
         // end
         /*
@@ -622,7 +697,7 @@ public class Program
 
         return answer;
     }
-    public double Task_2_13(double A, double B, int type)//!!!???
+    public double Task_2_13(double A, double B, int type)
     {
         double answer = 0;
         // code here;
@@ -681,7 +756,7 @@ public class Program
         while (currentLine != "stop")
         {
             double height;
-            while (!double.TryParse(currentLine, out height))
+            while (!double.TryParse(currentLine, new CultureInfo("en-US"), out height))
             {
                 if (currentLine == "stop")
                     break;
@@ -737,7 +812,7 @@ public class Program
             Console.WriteLine($"input abscissa of {n} point");
             currentLine = Console.ReadLine();
             double x;
-            while (!double.TryParse(currentLine, out x))
+            while (!double.TryParse(currentLine, new CultureInfo("en-US"), out x))
             {
                 Console.WriteLine("invalid input    try again");
                 currentLine = Console.ReadLine();
@@ -746,7 +821,7 @@ public class Program
             Console.WriteLine($"input ordinate of {n} point");
             currentLine = Console.ReadLine();
             double y;
-            while (!double.TryParse(currentLine, out y))
+            while (!double.TryParse(currentLine, new CultureInfo("en-US"), out y))
             {
                 Console.WriteLine("invalid input    try again");
                 currentLine = Console.ReadLine();
@@ -806,7 +881,7 @@ public class Program
             Console.WriteLine($"input abscissa of {n} point");
             currentLine = Console.ReadLine();
             double x;
-            while (!double.TryParse(currentLine, out x))
+            while (!double.TryParse(currentLine, new CultureInfo("en-US"), out x))
             {
                 Console.WriteLine("invalid input    try again");
                 currentLine = Console.ReadLine();
@@ -815,7 +890,7 @@ public class Program
             Console.WriteLine($"input ordinate of {n} point");
             currentLine = Console.ReadLine();
             double y;
-            while (!double.TryParse(currentLine, out y))
+            while (!double.TryParse(currentLine, new CultureInfo("en-US"), out y))
             {
                 Console.WriteLine("invalid input    try again");
                 currentLine = Console.ReadLine();
@@ -897,25 +972,25 @@ public class Program
             Console.WriteLine($"input 4 marks of {n} student");
             double mark1, mark2, mark3, mark4;
             currentLine = Console.ReadLine();
-            while (!double.TryParse(currentLine, out mark1)) 
+            while (!double.TryParse(currentLine, new CultureInfo("en-US"), out mark1)) 
             {
                 Console.WriteLine("invalid input    try again");
                 currentLine = Console.ReadLine();
             }
             currentLine = Console.ReadLine();
-            while (!double.TryParse(currentLine, out mark2)) 
+            while (!double.TryParse(currentLine, new CultureInfo("en-US"), out mark2)) 
             {
                 Console.WriteLine("invalid input    try again");
                 currentLine = Console.ReadLine();
             }
             currentLine = Console.ReadLine();
-            while (!double.TryParse(currentLine, out mark3)) 
+            while (!double.TryParse(currentLine, new CultureInfo("en-US"), out mark3)) 
             {
                 Console.WriteLine("invalid input    try again");
                 currentLine = Console.ReadLine();
             }
             currentLine = Console.ReadLine();
-            while (!double.TryParse(currentLine, out mark4)) 
+            while (!double.TryParse(currentLine, new CultureInfo("en-US"), out mark4)) 
             {
                 Console.WriteLine("invalid input    try again");
                 currentLine = Console.ReadLine();

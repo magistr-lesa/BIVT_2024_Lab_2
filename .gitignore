@@ -4,3 +4,5 @@
 
 /.vs
 /Lab2/.vs/Lab2
+/Lab2Tests/obj/Debug/net8.0
+/Lab2/obj/Debug/net8.0

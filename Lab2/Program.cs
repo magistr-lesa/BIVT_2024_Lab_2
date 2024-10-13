@@ -30,10 +30,12 @@ public class Program
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
         //program.Task_2_1(10);
+
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2); 
         //program.Task_2_5(10, 25.2);
+
         //program.Task_2_6(5);
         //program.Task_2_7(5);
         //program.Task_2_8(5));
@@ -42,6 +44,7 @@ public class Program
         //program.Task_2_11(10);
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
+
         //program.Task_3_1(10);
         // program.Task_3_2(3, 2, 1);
         // program.Task_3_3(10);
@@ -55,6 +58,8 @@ public class Program
         // program.Task_3_11(10);
         // program.Task_3_12(1.5, 0);
         // program.Task_3_13(10, 5, 0);
+
+
     }
     #region Level 1
     public bool Task_1_1(double x, double y)
@@ -481,7 +486,8 @@ public class Program
     public double Task_3_1()
     {
         double answer = 0;
-
+        int n = 0;
+        
         // code here
 
         // end
@@ -493,7 +499,7 @@ public class Program
     }
     public int Task_3_2(double r, double a, double b)
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here
         string s = Console.ReadLine();
@@ -520,6 +526,7 @@ public class Program
     public double Task_3_3()
     {
         double answer = 0;
+        int n = 0;
 
         // code here
 
@@ -532,7 +539,7 @@ public class Program
     }
     public int Task_3_4(double r1, double r2)
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here
         string s = Console.ReadLine();
@@ -562,7 +569,7 @@ public class Program
     }
     public int Task_3_5(double norm)
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here
 
@@ -575,7 +582,7 @@ public class Program
     }
     public int Task_3_6()
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here
         string s = Console.ReadLine();
@@ -594,15 +601,14 @@ public class Program
         }
         // end
 
-        // for test input in console: -1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
+        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
         // answer should be equal to the task_2_6 answer
 
         return answer;
     }
     public (int, int) Task_3_7()
     {
-        int answer1 = 0;
-        int answer3 = 0;
+        int answer1 = 0, answer3 = 0, n = 0;
 
         // code here
 
@@ -615,7 +621,9 @@ public class Program
     }
     public (int, double) Task_3_8()
     {
+
         int answer = 0, i = 1;
+
         double answerLength = double.MaxValue;
 
         // code here
@@ -642,7 +650,7 @@ public class Program
         }
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
         // answer should be equal to the task_2_8 answer
 
         return (answer, Math.Round(answerLength, 2));
@@ -650,6 +658,7 @@ public class Program
     public double Task_3_9()
     {
         double answer = double.MaxValue;
+        int n = 0;
 
         // code here
 
@@ -662,7 +671,10 @@ public class Program
     }
     public int Task_3_10()
     {
+
         int answer = 0, a, b, c, d;
+
+
 
         // code here;
         string s = Console.ReadLine();
@@ -694,7 +706,7 @@ public class Program
     }
     public (int, double) Task_3_11()
     {
-        int answer = 0;
+        int answer = 0, n = 0;
         double avg = 0.0;
 
         // code here;

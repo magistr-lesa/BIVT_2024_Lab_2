@@ -483,7 +483,7 @@ public class Program
     #region Level 3
     public double Task_3_1()
     {
-        int count = 0;           // Количество введённых значений
+        int count = 0;
         double answer = 0;
 
         while (true)

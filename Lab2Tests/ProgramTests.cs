@@ -411,6 +411,7 @@ namespace Tests
         //        Assert.AreEqual(answerAvg[i], testAvg[i]);
         //    }
         //}
+
         [TestMethod()]
         public void Task_2_12Test()
         {

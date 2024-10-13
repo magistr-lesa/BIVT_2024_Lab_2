@@ -58,7 +58,7 @@ public class Program
         bool answer = false;
 
         // code here
-        if (Math.Abs(x * x + y * y) <= 4)
+        if (Math.Abs(x * x + y*y - 4)<= Math.Pow(10,-3))
             answer = true;
         // end
 

@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,16 +23,19 @@ public class Program
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
         //program.Task_2_1(10);
+
         //program.Task_2_2(5,1,3,1);
         //program.Task_2_3(6);
         //program.Task_2_4(3, 1, 3);
         //program.Task_2_5(6,25.2);
+
         //program.Task_2_6(5);
         //program.Task_2_7(2);
         //program.Task_2_8(3);
         //program.Task_2_9(6);
         //program.Task_2_10(6);
         //program.Task_2_11(10);
+
 
         //program.Task_2_12(3,2);
         //program.Task_2_13(3, 2.5, 1);
@@ -47,6 +50,7 @@ public class Program
         //program.Task_3_9(10);
         //program.Task_3_10(10);
         //program.Task_3_11(10);
+
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
@@ -235,7 +239,9 @@ public class Program
         
         return answer;
     }
+
     public int Task_2_2(int n, double r,double a,double b)
+
     {
         int answer = 0;
         double x, y; 
@@ -329,6 +335,7 @@ public class Program
         int answer = 0;
         double x, y;
         // code here
+
         for (int i = 0; i < n; i++)
         {
             x = double.Parse(Console.ReadLine());
@@ -341,6 +348,7 @@ public class Program
         // end
         Console.WriteLine(answer);
         // for test input in console: -1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
+
 
         return answer;
     }
@@ -387,6 +395,7 @@ public class Program
         double answerLength = double.MaxValue;
         double x, y,s;
         // code here
+
         for (int i = 1; i <= n; i++)
         {
             x = double.Parse(Console.ReadLine());
@@ -402,6 +411,7 @@ public class Program
         if (n == 0) answerLength = 0;
         // end
         Console.WriteLine($"{answer} {answerLength}");
+
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
 
         return (answer, answerLength);
@@ -540,10 +550,11 @@ public class Program
     #endregion
 
     #region Level 3
-    public double Task_3_1(int n)
+    public double Task_3_1()
     {
         double answer = 0;
-
+        int n = 0;
+        
         // code here
 
         // end
@@ -553,10 +564,12 @@ public class Program
 
         return answer;
     }
-    public int Task_3_2(int n, double r)
+    public int Task_3_2(double r, double a, double b)
     {
+
         int answer = 0;
         
+
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
         // answer should be equal to the task_2_2 answer
@@ -566,7 +579,9 @@ public class Program
     public double Task_3_3()
     {
         double answer = 0;
+
         string stop = "";
+
 
         // code here
         while (true)
@@ -587,9 +602,9 @@ public class Program
 
         return answer;
     }
-    public int Task_3_4(int n, double r1, double r2)
+    public int Task_3_4(double r1, double r2)
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here
 
@@ -600,9 +615,9 @@ public class Program
 
         return answer;
     }
-    public int Task_3_5(int n, double norm)
+    public int Task_3_5(double norm)
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here
 
@@ -615,7 +630,7 @@ public class Program
     }
     public int Task_3_6()
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here
         string stop= "";
@@ -636,15 +651,14 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-        // for test input in console: -1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
+        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
         // answer should be equal to the task_2_6 answer
 
         return answer;
     }
-    public (int, int) Task_3_7(int n)
+    public (int, int) Task_3_7()
     {
-        int answer1 = 0;
-        int answer3 = 0;
+        int answer1 = 0, answer3 = 0, n = 0;
 
         // code here
 
@@ -655,16 +669,16 @@ public class Program
 
         return (answer1, answer3);
     }
-    public (int, double) Task_3_8(int n)
+    public (int, double) Task_3_8()
     {
-        int answer = 0;
+        int answer = 0, n = 0;
         double answerLength = double.MaxValue;
 
         // code here
 
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
         // answer should be equal to the task_2_8 answer
 
         return (answer, answerLength);
@@ -672,8 +686,10 @@ public class Program
     public double Task_3_9()
     {
         double answer = double.MaxValue;
+
         string stop = "";
         double t = 0;
+
         // code here
         while(true)
         {
@@ -696,9 +712,9 @@ public class Program
 
         return answer;
     }
-    public int Task_3_10(int n)
+    public int Task_3_10()
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here;
 
@@ -709,9 +725,9 @@ public class Program
 
         return answer;
     }
-    public (int, double) Task_3_11(int n)
+    public (int, double) Task_3_11()
     {
-        int answer = 0;
+        int answer = 0, n = 0;
         double avg = 0.0;
 
         // code here;

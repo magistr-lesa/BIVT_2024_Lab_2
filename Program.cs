@@ -237,7 +237,7 @@ public class Program
         {
             double x = double.Parse(Console.ReadLine());
             double y = double.Parse(Console.ReadLine());
-            if (x >= 0 && x <= Math.PI && y <= Math.Sin(x))
+            if ((x >= 0) && (y >= 0) && (x <= Math.PI) && (y <= Math.Sin(x)))
                 count += 1;
         }
         Console.WriteLine(count);
@@ -367,17 +367,19 @@ public class Program
 
         for (int i = 1; i <= n; i++)
         {
+            int t = 0;
             for (int j = 1; j <= 4; j++)
             {
                 string res = Console.ReadLine();
 
                 if (res == "2")
-                {  
-                    isFailed++;
+                {
+                    t = 1;
                 }
 
                 sum += double.Parse(res);
             }
+            isFailed += t;
 
         }
         if (n != 0)
@@ -524,7 +526,7 @@ public class Program
             bool result2 = double.TryParse(output2, out var y);
             if (result2 == false) break;
 
-            if (x >= 0 && x <= Math.PI && y <= Math.Sin(x))
+            if ((x >= 0) && (y >= 0) && (x <= Math.PI) && (y <= Math.Sin(x)))
                 count += 1;
         }
         Console.WriteLine(count);

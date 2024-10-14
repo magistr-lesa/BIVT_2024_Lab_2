@@ -25,6 +25,7 @@ public class Program
         //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
+
         //program.Task_2_3(6);
         //program.Task_2_4(3, 1, 3);
         //program.Task_2_5(6, 25.2);
@@ -36,6 +37,7 @@ public class Program
         //program.Task_2_11(0);
         //program.Task_2_12(1.5, 0);
         program.Task_2_13(1.2, 0.2, -4);
+
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
@@ -388,7 +390,7 @@ public class Program
         Console.WriteLine(Math.Round(answerLength,2));
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
 
         return (answer, answerLength);
     }
@@ -683,7 +685,7 @@ public class Program
 
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
         // answer should be equal to the task_2_8 answer
 
         return (answer, answerLength);

@@ -296,6 +296,9 @@ public class Program
             double x, y;
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
+            if(x < 0 || x > Math.PI) {
+                continue;
+            }
             if(y > 0 && y <= Math.Sin(x)) {
                 ++answer;
             }

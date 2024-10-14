@@ -27,7 +27,7 @@ public class Program
         //program.Task_2_3(6);
         //program.Task_2_4(3, 1, 3);
         //program.Task_2_5(6,25.2);
-        //program.Task_2_6(3);
+        //program.Task_2_6(5);
         //program.Task_2_7(2);
         //program.Task_2_8(3);
         //program.Task_2_9(6);
@@ -333,7 +333,7 @@ public class Program
         {
             x = double.Parse(Console.ReadLine());
             y = double.Parse(Console.ReadLine());
-            if (y >= 0 && y <= Math.Abs(Math.Sin(x)))
+            if (y >= 0 && y <= Math.Abs(Math.Sin(x)) && x>=0 && x <=Math.PI)
             {
                 answer++;
             }
@@ -574,7 +574,6 @@ public class Program
             stop = Console.ReadLine();
             Double.TryParse(stop, out double m);
             if (stop == "stop") break;
-            m = double.Parse(Console.ReadLine());
             if (m < 30.0)
             {
                 answer += 0.2;

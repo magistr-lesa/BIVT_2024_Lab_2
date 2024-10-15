@@ -217,7 +217,7 @@ public class Program
         {
             double x_1 = double.Parse(Console.ReadLine());
             double y1 =  double.Parse(Console.ReadLine());
-            if (Math.Sqrt((x_1 - x)*(x_1 - x) + (y1 - y)* (y1 - y)) <= Math.Sqrt(r)) {answer++;}
+            if (x - x_1)*(x - x_1) + (y - y1)*(y - y1) <= r*r {answer++;}
         }
         // end
 
@@ -281,7 +281,7 @@ public class Program
         for (int i = 0; i < n; i++)
         {
             double x = double.Parse(Console.ReadLine()), y = double.Parse(Console.ReadLine());
-            if ((x >= 0) && (x <= Math.PI) && ( y <= Math.Sin(x))) { answer++; }
+            if ((x >= 0) && (x <= Math.PI) && (y >= 0) && ( y <= Math.Sin(x))) { answer++; }
         }
         // end
 
@@ -315,7 +315,7 @@ public class Program
         double answerLength = double.MaxValue;
 
         // code here
-        for (int i = 0; i < n; i++)
+        for (int i = 1; i <= n; i++)
         {
             double x = double.Parse(Console.ReadLine()), y = double.Parse(Console.ReadLine());
             if (Math.Sqrt(x * x + y * y) < answerLength)

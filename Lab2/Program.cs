@@ -23,28 +23,28 @@ public class Program
         //program.Task_1_8(0.9);
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
-        //program.Task_2_1(3);
-        //program.Task_2_2(3, 3, 2, 1);
+        //program.Task_2_1(10);
+        //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
-        //program.Task_2_3(3);
-        //program.Task_2_4(5, 1, 2);
-        //program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
-        //program.Task_2_7(4);
-        //program.Task_2_8(4);
-        //program.Task_2_9(4);
-        //program.Task_2_10(4);
-        //program.Task_2_11(4);
+        //program.Task_2_3(6);
+        //program.Task_2_4(3, 1, 2);
+        //program.Task_2_5(8, 30);
+        //program.Task_2_6(3);
+        //program.Task_2_7(5);
+        //program.Task_2_8(3);
+        //program.Task_2_9(6);
+        //program.Task_2_10(6);
+        //program.Task_2_11(6);
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
-        //program.Task_3_2(3, 2, 1);
-        //program.Task_3_2(1.5, 1.5, 1);
+        //program.Task_3_2(1, 3, 1);
+        //program.Task_3_2(1, 3, 1);
         //program.Task_3_2(1, 3, 1);
         //program.Task_3_3();
         //program.Task_3_4(1, 2);
-        //program.Task_3_5(30);
+        //program.Task_3_5(25.2);
         //program.Task_3_6();
         //program.Task_3_7();
         //program.Task_3_8();
@@ -237,7 +237,7 @@ public class Program
 
              if(successX && successY)
                 {
-                if (x * x + y * y >= r1 && x * x + y * y <= r2) answer++;
+                if (x * x + y * y >= r1 * r1 && x * x + y * y <= r2 * r2) answer++;
                 }
              else 
                 { 
@@ -262,7 +262,7 @@ public class Program
 
             if(success)
                 {
-                if(result >= norm) answer++;
+                if(result <= norm) answer++;
                 }
             else
                 {
@@ -371,7 +371,7 @@ public class Program
                 result = double.Parse(Console.ReadLine());
                 if (result < answer) answer = result;
             }
-            Console.WriteLine("{0:f2}", answer);
+            Console.WriteLine("{0:f1}", answer);
         }
         catch (FormatException exp)
             {
@@ -407,20 +407,20 @@ public class Program
     }
     public (int, double) Task_2_11(int n)
     {
-        int answer = 0, save = int.MaxValue;
-        double avg = 0.0;
+        int answer = 0;
+        double avg = 0.0, save = 0.0;
 
         try
         {
-            for (int i = 1; i <= n; ++i, save = int.MaxValue)
+            for (int i = 1; i <= n; ++i, save = 0)
             {
                 for (int k = 1, score; k <= 4; k++)
                 {
                     score = int.Parse(Console.ReadLine());
                     avg += score;
-                    if (save > score) save = score;
+                    save += score;
                 }
-
+                save /= 4;
                 if (save < 4) answer++;
 
             }
@@ -495,7 +495,7 @@ public class Program
         string inputX, inputY;
 
         try
-            {while ((inputX = Console.ReadLine()) != null && inputX != "" && (inputY = Console.ReadLine()) != null && inputY != "") 
+            {while ((inputX = Console.ReadLine()) != "" && (inputY = Console.ReadLine()) != "") 
                 {
                     x = double.Parse(inputX);
                     y = double.Parse(inputY);
@@ -512,7 +512,6 @@ public class Program
     public double Task_3_3()
     {
         double answer = 0;
-        int n = 0;
 
         // code here
 
@@ -538,10 +537,10 @@ public class Program
 
         try
         {
-            while ((input = Console.ReadLine()) != null && input != "")
+            while ((input = Console.ReadLine()) != "")
             {
                 result = double.Parse(input);
-                if (result >= norm) answer++;
+                if (result <= norm) answer++;
             }
             Console.WriteLine(answer);
 
@@ -578,7 +577,7 @@ public class Program
 
         try
         {
-            while ((inputX = Console.ReadLine()) != null && inputX != "" && (inputY = Console.ReadLine()) != null && inputY != "")
+            while ((inputX = Console.ReadLine()) != "" && (inputY = Console.ReadLine()) != "")
             {
                 x = double.Parse(inputX);
                 y = double.Parse(inputY);
@@ -621,8 +620,8 @@ public class Program
     }
     public (int, double) Task_3_11()
     {
-        int answer = 0, save = int.MaxValue, n = 0;
-        double avg = 0.0;
+        int answer = 0, n = 0;
+        double avg = 0.0, save = 0.0;
         string input;
         bool pointer = true;
 
@@ -632,19 +631,20 @@ public class Program
             { 
                 for (int k = 1, score; k <= 4; k++)
                 {
-                    if ((input = Console.ReadLine()) != null && input != "")
+                    if ((input = Console.ReadLine()) != "")
                     {
                         score = int.Parse(input);
                         avg += score;
                         n++;
-                        if (save > score) save = score;
+                        save += score;
                     }
                     else { pointer = false;  break;}
                 }
                 if(pointer)
                     {
+                    save /= 4;
                     if (save < 4) answer++;
-                    save = int.MaxValue;
+                    save = 0;
                     }
             }
             avg /= n;

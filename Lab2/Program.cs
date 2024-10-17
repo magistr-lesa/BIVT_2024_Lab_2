@@ -32,7 +32,7 @@ public class Program
         //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
-        //program.Task_2_11(10);
+        program.Task_2_11(10);
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
@@ -58,7 +58,7 @@ public class Program
         double r = 2;
         
         // code here
-        if (r*r == x*x+y*y)
+        if (Math.Abs(x*x+y*y-r*r)<=1/1000)
             answer = true;
         // end
         
@@ -243,8 +243,8 @@ public class Program
                 answer+=200;
         }
         // end
-        
-        Console.WriteLine(answer/1000);
+        answer /= 1000;
+        Console.WriteLine(answer);
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
         return answer;
@@ -351,8 +351,11 @@ public class Program
             y = double.Parse(Console.ReadLine());
             c = Math.Sqrt(x*x+y*y);
             if (c < answerLength)
+            {
                 answer = i + 1;
-            answerLength = Math.Min(answerLength, c);
+                answerLength = c;
+            }
+            
 
         }
         // end
@@ -370,7 +373,7 @@ public class Program
         {
             res = double.Parse(Console.ReadLine());
             if (res < answer)
-                answer = Math.Min(answer, res);
+                answer = res;
         }
         // end
         Console.WriteLine(answer);
@@ -389,7 +392,7 @@ public class Program
             res2 = int.Parse(Console.ReadLine());
             res3 = int.Parse(Console.ReadLine());
             res4 = int.Parse(Console.ReadLine());
-            if (res1 + res2 + res3 + res4 >= 16)
+            if (res1>3 && res2 >3 && res3 >3 && res4 > 3)
                 answer++;
         }
         // end
@@ -401,7 +404,7 @@ public class Program
     public (int, double) Task_2_11(int n)
     {
         int answer = 0;
-        double avg = 0.0, rage=0;
+        double avg = 0.0;
         int res1, res2, res3, res4;
         // code here;
         for (int i = 0; i<n; i++)
@@ -410,11 +413,11 @@ public class Program
             res2 = int.Parse(Console.ReadLine());
             res3 = int.Parse(Console.ReadLine());
             res4 = int.Parse(Console.ReadLine());
-            rage = (res1 + res2 + res3 + res4) / 4;
-            if (rage < 3.5)
+            avg += res1 + res2 + res3 + res4;
+            if (res1 == 2 || res2 == 2 || res3 == 2 || res4 == 2)
                 answer++;
-            avg += rage*4;
         }
+
         // end
         Console.WriteLine("кол-во неуспевающих: {0}, средний балл группы: {1}", answer,avg / (n*4));
         // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
@@ -696,7 +699,7 @@ public class Program
                 res2 = int.Parse(Console.ReadLine());
                 res3 = int.Parse(Console.ReadLine());
                 res4 = int.Parse(Console.ReadLine());
-                if (res1 + res2 + res3 + res4 >= 16)
+                if (res1 > 3 && res2 > 3 && res3 > 3 && res4 > 3)
                     answer++;
             }
         }

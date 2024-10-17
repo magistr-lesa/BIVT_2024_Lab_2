@@ -28,7 +28,7 @@ public class Program
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 3);
         //program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
+        //program.Task_2_6(3);
         //program.Task_2_7(5);
         //program.Task_2_8(5);
         //program.Task_2_9(10);
@@ -342,12 +342,11 @@ public class Program
 
         // code here
         double data;
-        Console.WriteLine(norm);
         for(int i = 0; i < n; ++i)
         {
             double.TryParse((string)Console.ReadLine(), out data);
 
-            if(data >= norm)
+            if(data <= norm)
             {
                 answer++;
             }
@@ -369,7 +368,7 @@ public class Program
         {
             double.TryParse((string)Console.ReadLine(), out x);
             double.TryParse((string)Console.ReadLine(), out y);
-            if((y > 0) && (y < Math.Sin(x)) && (x > 0) && (x < Math.PI))
+            if((y >= 0) && (y <= Math.Sin(x)) && (x >= 0) && (x <= Math.PI))
             {
                 answer ++;
             }
@@ -521,26 +520,27 @@ public class Program
         double answer = 0;
 
         // code here;
-        if (type < 0 || type > 2) return 0;
         if (r > 0)
         {
-            if (type == 0)
+            switch (type)
             {
-                answer = r * r;
-            }
-            else if (type == 1)
-            {
-                answer = Math.PI * r * r;
-            }
-            else
-            {
-                answer = Math.Sqrt(3) * (r * r) / 4;
+                case 0:
+                    answer = r * r;
+                    break;
+                case 1:
+                    answer = Math.PI * r * r;
+                    break;
+                case 2:
+                    answer = Math.Sqrt(3) * (r * r) / 4;
+                    break;
+                default:
+                    return 0;
             }
         }
         answer = Math.Round(answer,2);
 
         // end
-
+        Console.WriteLine(answer);
         return answer;
     }
     public double Task_2_13(double A, double B, int type)
@@ -548,7 +548,6 @@ public class Program
         double answer = 0;
 
         // code here;
-        if ((type < 0) || (type > 2)) return 0;
         if(A <= 0 || B<=0) return 0;
         switch (type)
         {
@@ -562,6 +561,8 @@ public class Program
                 double h = Math.Sqrt(B*B- A*A/4);
                 answer = A * h / 2;
                 break;
+            default:
+                return 0;
         }
         answer = Math.Round(answer,2);
         // end

@@ -217,7 +217,7 @@ public class Program
         {
             double x_1 = double.Parse(Console.ReadLine());
             double y1 =  double.Parse(Console.ReadLine());
-            if (x - x_1)*(x - x_1) + (y - y1)*(y - y1) <= r*r {answer++;}
+            if ((x - x_1)*(x - x_1) + (y - y1)*(y - y1) <= r*r) {answer++;}
         }
         // end
 

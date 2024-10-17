@@ -409,7 +409,7 @@ public class Program
             double.TryParse(Console.ReadLine(), out double x);
             Console.WriteLine($"Введите координату y {i} точки");
             double.TryParse(Console.ReadLine(), out double y);
-            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y)
+            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y && y >= 0)
             {
                 Console.WriteLine("Точка принадлежит фигуре");
                 answer += 1;
@@ -511,15 +511,20 @@ public class Program
         int answer = 0;
 
         // code here;
+        int check = 1;
         for (int i = 1; i <= n; i++)
         {
-            Console.Write($"Введите оценки {i} студента  : ");
-            string marks = Console.ReadLine();
-
-            if (!marks.Contains("2") && !marks.Contains("3"))
+            for (int j = 1; j <= 4; j++)
             {
-                answer++;
+                Console.Write($"Введите {j} оценку {i} ученика : ");
+                double.TryParse(Console.ReadLine(), out double input);
+                if (input == 2 || input == 3)
+                {
+                    check = 0;
+                }
             }
+            answer += check;
+            check = 1;
         }
         Console.WriteLine($"ответ = {answer}");
         
@@ -536,18 +541,21 @@ public class Program
         double avg = 0.0;
 
         // code here;
+        int check = 0;
         for (int i = 1; i <= n; i++)
         {
             for (int j = 1; j <= 4; j++)
             {
-            Console.Write($"Введите {j} оценку {i} ученика : ");
-            double.TryParse(Console.ReadLine(), out double input);
-            if (input == 2)
+                Console.Write($"Введите {j} оценку {i} ученика : ");
+                double.TryParse(Console.ReadLine(), out double input);
+                if (input == 2)
                 {
-                    answer += 1;
+                    check = 1;
                 }
-            avg += input;
+                avg += input;
             }
+            answer += check;
+            check = 0;
         }
         avg /= n*4;
         Console.WriteLine($"Неуcпевающие ученики: {answer}");

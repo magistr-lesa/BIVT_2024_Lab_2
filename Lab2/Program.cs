@@ -40,7 +40,7 @@ public class Program
         // program.Task_2_8(3);
         // program.Task_2_9(6);
         // program.Task_2_10(6);
-        // program.Task_2_11(10);
+        // program.Task_2_11(6);
         // program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         // program.Task_3_1();
@@ -78,7 +78,7 @@ public class Program
         bool answer = false;
 
         // code here
-        if (y >= 0 & y + Math.Abs(x) <= 1)
+        if (y >= 0 && y + Math.Abs(x) <= 1)
         {
             answer = true;
         }
@@ -168,7 +168,7 @@ public class Program
 
         // code here
         if (x <= -1) answer = 0;
-        else if (-1 < x & x <= 0) answer = 1 + x;
+        else if (-1 < x && x <= 0) answer = 1 + x;
         else answer = 1;
         // end
 
@@ -180,7 +180,7 @@ public class Program
 
         // code here
         if (x <= -1) answer = 1;
-        else if (-1 < x & x <= 1) answer = -x;
+        else if (-1 < x && x <= 1) answer = -x;
         else answer = -1;
         Console.WriteLine(answer);
         // end
@@ -255,7 +255,7 @@ public class Program
         {
             double x = Convert.ToDouble(Console.ReadLine());
             double y = Convert.ToDouble(Console.ReadLine());
-            if ((Math.Pow(r1, 2) <= Math.Pow(x, 2) + Math.Pow(y, 2)) & (Math.Pow(x, 2) + Math.Pow(y, 2) <= Math.Pow(r2, 2))) answer += 1;
+            if ((Math.Pow(r1, 2) <= Math.Pow(x, 2) + Math.Pow(y, 2)) && (Math.Pow(x, 2) + Math.Pow(y, 2) <= Math.Pow(r2, 2))) answer += 1;
             Console.WriteLine(answer);
         }
         // end
@@ -290,7 +290,7 @@ public class Program
         {
             double x = Convert.ToDouble(Console.ReadLine());
             double y = Convert.ToDouble(Console.ReadLine());
-            if ((0 <= x & x <= Math.PI) & (0 <= y & y <= Math.Sin(x))) answer += 1;
+            if ((0 <= x && x <= Math.PI) && (0 <= y && y <= Math.Sin(x))) answer += 1;
         }
         Console.WriteLine(answer);
         // end
@@ -309,13 +309,13 @@ public class Program
         {
             double x = Convert.ToDouble(Console.ReadLine());
             double y = Convert.ToDouble(Console.ReadLine());
-            if (x > 0 & y > 0) 
+            if (x > 0 && y > 0) 
             {
                 Console.WriteLine(1); 
                 answer1 += 1;
             } 
-            else if (x < 0 & y > 0) Console.WriteLine(2); 
-            else if (x < 0 & y < 0)
+            else if (x < 0 && y > 0) Console.WriteLine(2); 
+            else if (x < 0 && y < 0)
             {
                 Console.WriteLine(3);
                 answer3 += 1;
@@ -388,7 +388,7 @@ public class Program
                 int grade = Convert.ToInt32(Console.ReadLine());
                 if (grade == 2 || grade == 3) bad_student = true;
             };
-            if (bad_student) answer += 1;
+            if (!bad_student) answer += 1;
         }
         Console.WriteLine(answer);
         // end
@@ -403,27 +403,30 @@ public class Program
         double avg = 0.0;
 
         // code here;
-        for (int i=1; i<=n; i++)
+        for (int i = 1; i <= n; i++)
         {
+            bool failGrade = false;
             double averageRating = 0;
-            for (int j=1; j<=4; j++)
+
+            for (int j = 1; j <= 4; j++)
             {
                 int grade = Convert.ToInt32(Console.ReadLine());
+                if (grade == 2) failGrade = true;
                 averageRating += grade;
                 avg += grade;
             }
+
+            if (failGrade) answer += 1;
             averageRating /= 4;
-            if (averageRating < 4) answer += 1;
         }
-        avg /= n*4;
+        avg /= n * 4;
         Console.WriteLine(answer);
         Console.WriteLine(avg);
         // end
 
-        // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
-
         return (answer, avg);
     }
+
     public double Task_2_12(double r, int type) // dotnet test --filter Tests.ProgramTests.Task_2_12Test
     {
         double answer = 0;
@@ -573,7 +576,7 @@ public class Program
             {
                 double y = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine((x, y));
-                if ((Math.Pow(r1, 2) <= Math.Pow(x, 2) + Math.Pow(y, 2)) & (Math.Pow(x, 2) + Math.Pow(y, 2) <= Math.Pow(r2, 2))) answer += 1;
+                if ((Math.Pow(r1, 2) <= Math.Pow(x, 2) + Math.Pow(y, 2)) && (Math.Pow(x, 2) + Math.Pow(y, 2) <= Math.Pow(r2, 2))) answer += 1;
             }
             else Console.WriteLine("Ошибочка (для завершения ввода данных подайте пустую строку)");
         }
@@ -620,7 +623,7 @@ public class Program
             if (double.TryParse(strX, out double x))
             {
                 double y = Convert.ToDouble(Console.ReadLine());
-                if ((0 <= x & x <= Math.PI) & (0 <= y & y <= Math.Sin(x))) answer += 1;
+                if ((0 <= x && x <= Math.PI) && (0 <= y && y <= Math.Sin(x))) answer += 1;
             }
         }
         Console.WriteLine(answer);
@@ -643,13 +646,13 @@ public class Program
             if (double.TryParse(strX, out double x))
             {
                 double y = Convert.ToDouble(Console.ReadLine());
-                if (x > 0 & y > 0) 
+                if (x > 0 && y > 0) 
                 {
                     Console.WriteLine(1); 
                     answer1 += 1;
                 } 
-                else if (x < 0 & y > 0) Console.WriteLine(2); 
-                else if (x < 0 & y < 0)
+                else if (x < 0 && y > 0) Console.WriteLine(2); 
+                else if (x < 0 && y < 0)
                 {
                     Console.WriteLine(3);
                     answer3 += 1;
@@ -738,7 +741,7 @@ public class Program
                     if (grade == 2 || grade == 3) bad_student = true;
                 }
             }
-            if (bad_student) answer += 1;
+            if (!bad_student) answer += 1;
         }
         Console.WriteLine(answer);
         // end
@@ -758,6 +761,7 @@ public class Program
         bool flag = true;
         while (flag)
         {
+            bool failGrade = false;
             double averageRating = 0;
             for (int i=1; i<=4; i++)
             {
@@ -765,6 +769,7 @@ public class Program
                 if (strGrade == "") {flag = false; break;};
                 if (int.TryParse(strGrade, out int grade))
                 {
+                    if (grade == 2) failGrade = true;
                     averageRating += grade;
                     avg += grade;
                 }
@@ -772,7 +777,7 @@ public class Program
             if (averageRating == 0) break;
             n += 1;
             averageRating /= 4;
-            if (averageRating < 4) answer += 1;
+            if (failGrade) answer += 1;
         }
         avg /= n*4;
         

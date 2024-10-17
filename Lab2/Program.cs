@@ -22,7 +22,7 @@ public class Program
         //program.Task_1_8(0.9);
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
-        // program.Task_2_1(2);
+        program.Task_2_1(10);
         // program.Task_2_2(3, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
@@ -166,7 +166,7 @@ public class Program
             double.TryParse(input, out high);
             answer += high;
         }
-        answer /= 2;
+        answer /= n;
         Math.Round(answer,2);
         WriteLine(answer);
         return answer;
@@ -224,7 +224,7 @@ public class Program
         for (int l = 1; l <= 30; l++) {
             WriteLine("Введите результаты игрока {l}");
             double.TryParse(ReadLine(), out result);
-            if (result >= norm) {
+            if (result <= norm) {
                 answer++;
             }
         }
@@ -346,7 +346,7 @@ public class Program
                 answer++;   
             }
         }
-        avg /=2;
+        avg /= 4*n;
         Math.Round(avg,2);
         WriteLine(answer);
         WriteLine(avg);

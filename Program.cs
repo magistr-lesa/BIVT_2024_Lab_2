@@ -344,7 +344,7 @@ public class Program
             x = double.Parse(Console.ReadLine());
             Console.WriteLine("Введите координату по У:");
             y = double.Parse(Console.ReadLine());
-            if (x<= Math.PI && x>=0 && y<= Math.Sin(x))
+            if (x<= Math.PI && x>=0 && y<= Math.Sin(x) && y>=0)
             {
                 answer++;
             }
@@ -473,7 +473,7 @@ public class Program
             a2 = double.Parse(Console.ReadLine());
             a3 = double.Parse(Console.ReadLine());
             a4 = double.Parse(Console.ReadLine());
-            if (a1 ==2 && a2 ==2 && a3 ==2 && a4 == 2)
+            if (a1 ==2 || a2 ==2 || a3 ==2 || a4 == 2)
             {
                 answer++;
             }

@@ -234,7 +234,7 @@ public class Program
         for (int i = 0; i < n; i++)
         {
             double.TryParse(Console.ReadLine(), out a);
-            if (a >= norm)
+            if (a <= norm)
             {
                 answer += 1;
             }
@@ -487,11 +487,10 @@ public class Program
         double a = 0;
         while (double.TryParse(Console.ReadLine(), out a))
         {
-            if (a >= norm)
+            if (a <= norm)
                 answer += 1;
         }
         Console.WriteLine(answer);
-
         return answer;
     }
     public int Task_3_6()

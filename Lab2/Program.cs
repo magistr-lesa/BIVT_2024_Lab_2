@@ -1,4 +1,4 @@
-using Microsoft.VisualBasic;
+﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +30,7 @@ public class Program
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
+        program.Task_2_6(5);
         //program.Task_2_7(5);
         //program.Task_2_8(5);
         //program.Task_2_9(10);
@@ -48,7 +48,7 @@ public class Program
         //program.Task_3_6();
         //program.Task_3_7();
         //program.Task_3_8();
-        program.Task_3_9();
+        //program.Task_3_9();
         //program.Task_3_10();
         //program.Task_3_11();
         //program.Task_3_12(10, 0);
@@ -336,15 +336,13 @@ public class Program
     public int Task_2_6(int n)
     {
         int answer = 0;
-        double x;
-        double y;
         int counter = 0;
 
 
         for(int i = 1; i <= n; i++){
-            x = double.Parse(Console.ReadLine());
-            y = double.Parse(Console.ReadLine());
-            if(x >=0 && x<=Math.PI && Math.Sin(x) <= y){
+            double x = double.Parse(Console.ReadLine());
+            double y = double.Parse(Console.ReadLine());
+            if(x >=0 && x<=Math.PI && Math.Sin(x) >= y && y >=0){
                 counter +=1;
             }
         }
@@ -611,7 +609,7 @@ public class Program
             }
             x = Convert.ToDouble(input); 
             y = double.Parse(Console.ReadLine());
-            if(x >=0 && x<=Math.PI && Math.Sin(x) <= y){
+            if(x >=0 && x<=Math.PI && Math.Sin(x) >= y && y >=0){
                 counter +=1;
             }
 

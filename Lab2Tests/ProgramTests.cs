@@ -457,7 +457,7 @@ namespace Tests
             double[] B = new double[n] { 3, 2.8, 2.5 };
             int[] type = new int[n] { 0, 1, 2 };
             double[,] test = new double[n, n];
-            double[,] answer = new double[n, n] { { 4.5, 21.21, 2.18 }, { 0.56, 24.5, 0.28 }, { 7.5, 0, 3 } };
+            double[,] answer = new double[n, n] { { 4.5, 21.21, 2.18 }, { 0.56, 24.5, 0.28 }, { 7.5, 8.64, 3 } };
             // Act
             for (int i = 0; i < n; i++)
             {

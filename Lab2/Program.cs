@@ -345,6 +345,7 @@ public class Program
         double answerLength = double.MaxValue;
         double x, y,c;
         // code here
+
         for( int i=0; i<n; i++)
         {
             x = double.Parse(Console.ReadLine());
@@ -361,6 +362,7 @@ public class Program
         // end
         Console.Write("{0}, {1}", answer,answerLength);
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
+
 
         return (answer, answerLength);
     }
@@ -663,7 +665,7 @@ public class Program
 
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
         // answer should be equal to the task_2_8 answer
 
         return (answer, answerLength);

@@ -408,20 +408,19 @@ public class Program
     public (int, double) Task_2_11(int n)
     {
         int answer = 0;
-        double avg = 0.0, save = 0.0;
+        double avg = 0.0, save = int.MaxValue;
 
         try
         {
-            for (int i = 1; i <= n; ++i, save = 0)
+            for (int i = 1; i <= n; ++i, save = int.MaxValue)
             {
                 for (int k = 1, score; k <= 4; k++)
                 {
                     score = int.Parse(Console.ReadLine());
                     avg += score;
-                    save += score;
+                    if(save > score) save = score;
                 }
-                save /= 4;
-                if (save < 4) answer++;
+                if (save < 3) answer++;
 
             }
             avg /= 4 * n;
@@ -621,7 +620,7 @@ public class Program
     public (int, double) Task_3_11()
     {
         int answer = 0, n = 0;
-        double avg = 0.0, save = 0.0;
+        double avg = 0.0, save = int.MaxValue;
         string input;
         bool pointer = true;
 
@@ -636,15 +635,14 @@ public class Program
                         score = int.Parse(input);
                         avg += score;
                         n++;
-                        save += score;
+                        if (save > score) save = score;
                     }
                     else { pointer = false;  break;}
                 }
                 if(pointer)
                     {
-                    save /= 4;
-                    if (save < 4) answer++;
-                    save = 0;
+                    if (save < 3) answer++;
+                    save = int.MaxValue;
                     }
             }
             avg /= n;

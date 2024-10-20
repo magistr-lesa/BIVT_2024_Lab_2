@@ -29,7 +29,7 @@ public class Program
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
-        //program.Task_2_8(5);
+        program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
@@ -46,7 +46,7 @@ public class Program
         //program.Task_3_7();
         //program.Task_3_8();
         //program.Task_3_9();
-        program.Task_3_10();
+        //program.Task_3_10();
         //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
@@ -58,7 +58,7 @@ public class Program
 
         // code here
         double r = 2;
-        if (x * x + y * y == r * r & Math.Abs(x * x + y * y - r * r) <= 0.001)
+        if (x * x + y * y == r * r && Math.Abs(x * x + y * y - r * r) <= 0.001)
         {
             answer = true;
         }
@@ -71,7 +71,7 @@ public class Program
         bool answer = false;
 
         // code here
-        if (y >= 0 & Math.Abs(x) + y <= 1)
+        if (y >= 0 && Math.Abs(x) + y <= 1)
         {
             answer = true;
         }
@@ -315,7 +315,7 @@ public class Program
         {
             x = double.Parse(Console.ReadLine());
             y = double.Parse(Console.ReadLine());
-            if ((x - x0) * (x - x0) + (y - y0) * (y - y0) > r1 * r1 & (x - x0) * (x - x0) + (y - y0) * (y - y0) < r2 * r2)
+            if ((x - x0) * (x - x0) + (y - y0) * (y - y0) > r1 * r1 && (x - x0) * (x - x0) + (y - y0) * (y - y0) < r2 * r2)
             {
                 answer++;
             }
@@ -334,7 +334,7 @@ public class Program
         for (int i = 1; i <= n; i++)
         {
             a = double.Parse(Console.ReadLine());
-            if (a >= norm)
+            if (a <= norm)
             {
                 answer++;
             }
@@ -354,7 +354,7 @@ public class Program
         {
             x = double.Parse(Console.ReadLine());
             y = double.Parse(Console.ReadLine());
-            if (x >= 0 & x <= Math.PI & y >= 0 & y <= Math.Sin(x))
+            if (x >= 0 && x <= Math.PI && y >= 0 & y <= Math.Sin(x))
             {
                 answer++;
             }
@@ -375,21 +375,21 @@ public class Program
         {
             x = double.Parse(Console.ReadLine());
             y = double.Parse(Console.ReadLine());
-            if (x > 0 & y > 0)
+            if (x > 0 && y > 0)
             {
                 answer1++;
                 Console.WriteLine(1);
             }
-            if (x < 0 & y < 0)
+            if (x < 0 && y < 0)
             {
                 answer3++;
                 Console.WriteLine(3);
             }
-            if (x < 0 & y > 0)
+            if (x < 0 && y > 0)
             {
                 Console.WriteLine(2);
             }
-            if (x > 0 & y < 0)
+            if (x > 0 && y < 0)
             {
                 Console.WriteLine(4);
             }
@@ -540,7 +540,7 @@ public class Program
 
         // code here;
         double p = (A + B + B) / 2;
-        if (A > 0 & B > 0)
+        if (A > 0 && B > 0)
         {
             switch (type)
             {
@@ -624,7 +624,7 @@ public class Program
                 y1 = Console.ReadLine();
                 x = double.Parse(x1);
                 y = double.Parse(y1);
-                if ((x - x0) * (x - x0) + (y - y0) * (y - y0) > r1 * r1 & (x - x0) * (x - x0) + (y - y0) * (y - y0) < r2 * r2)
+                if ((x - x0) * (x - x0) + (y - y0) * (y - y0) > r1 * r1 && (x - x0) * (x - x0) + (y - y0) * (y - y0) < r2 * r2)
                 {
                     answer++;
                 }
@@ -671,21 +671,21 @@ public class Program
                 y1 = Console.ReadLine();
                 x = double.Parse(x1);
                 y = double.Parse(y1);
-                if (x > 0 & y > 0)
+                if (x > 0 && y > 0)
                 {
                     answer1++;
                     Console.WriteLine(1);
                 }
-                if (x < 0 & y < 0)
+                if (x < 0 && y < 0)
                 {
                     answer3++;
                     Console.WriteLine(3);
                 }
-                if (x < 0 & y > 0)
+                if (x < 0 && y > 0)
                 {
                     Console.WriteLine(2);
                 }
-                if (x > 0 & y < 0)
+                if (x > 0 && y < 0)
                 {
                     Console.WriteLine(4);
                 }

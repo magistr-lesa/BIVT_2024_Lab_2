@@ -319,7 +319,7 @@ public class Program
         for (int i = 0; i <= 29; i++)
         {
             double znach = double.Parse(Console.ReadLine());
-            if (znach >= norm)
+            if (znach <= norm)
             {
                 answer++;
             }
